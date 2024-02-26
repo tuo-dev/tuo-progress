@@ -1,0 +1,28 @@
+.tuo-bar-progress-container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+
+  [class*='bar-progress-dashes'] {
+    width: 100%;
+    fill: transparent;
+    stroke-linecap: round;
+  }
+
+  .tuo-bar-progress-dashes-background {
+    position: relative;
+    overflow: hidden;
+
+    .tuo-bar-progress-dashes {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .tuo-bar-progress-content {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
