@@ -1,9 +1,17 @@
-# TUO Progress (React)
+# tuo-progress (react)
 
 ## Screenshot
 
-![percent](https://github.com/tuo-dev/tuo-progress/assets/137742986/c6cab30f-16f7-461f-8903-d442198017b5)
-![state](https://github.com/tuo-dev/tuo-progress/assets/137742986/5b1adb96-c86e-4b3d-8385-027566b0be70)
+### TuoCircleProgress
+
+![circle-percent](https://github.com/tuo-dev/tuo-progress/assets/137742986/36899970-22a5-492d-9629-b7f1b7ad7b02)
+![circle-state](https://github.com/tuo-dev/tuo-progress/assets/137742986/9ca69711-256a-4120-abd0-c3601f3fa5f3)
+
+### TuoBarProgress
+
+![bar-percent](https://github.com/tuo-dev/tuo-progress/assets/137742986/c8d3cb32-1ba0-4c42-9e8f-e499a482dbb5)
+![bar-state](https://github.com/tuo-dev/tuo-progress/assets/137742986/04c74462-95e7-42d6-96a8-7a3fbd424e6e)
+
 
 ## Development
 
@@ -60,7 +68,7 @@ yarn add tuo-progress
 | progress | value of progress | number | |
 | max | maximum of progress | number | |
 | className | additional css class of root dom node | string | |
-| barWidth | width of circle | number | 100 |
+| barWidth | width of bar| number | 100 |
 | barHeight | height of bar | number | 10 |
 | barRadius | border-radius of progress bar | number | 10 |
 | progressColor | color of progress bar | stiring | #50586C |
