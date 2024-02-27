@@ -68,7 +68,7 @@ yarn add tuo-progress
 | progress | value of progress | number | |
 | max | maximum of progress | number | |
 | className | additional css class of root dom node | string | |
-| barWidth | width of bar| number | 'auto' | 100 |
+| barWidth | width of bar | number / 'auto' | 100 |
 | barHeight | height of bar | number | 10 |
 | barRadius | border-radius of progress bar | number | 10 |
 | progressColor | color of progress bar | stiring | #50586C |
