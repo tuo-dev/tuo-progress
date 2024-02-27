@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import './index.scss';
 
@@ -6,7 +6,7 @@ interface ITuoBarProgress {
   progress: number;
   max: number;
   className?: string;
-  barWidth?:number;
+  barWidth?:number | 'auto';
   barHeight?: number;
   barRadius?: number;
   progressColor?: string;
@@ -35,13 +35,19 @@ const TuoBarProgress = ({
   animationSpeed = 10,
   onAnimationState
 }:ITuoBarProgress) => {
+
+  const barRef = useRef<HTMLDivElement | null>(null)
   
   const [state, setState] = useState<number>(0);
   const [handleAnimation, setHandleAnimation] = useState<boolean>(false);
 
   const progressInfo = useMemo(() => {
+    let length:number | 'auto' = -1 
     const percent = Math.trunc(100 / max * state);
-    const length = barWidth / max * state;
+    if (barWidth === 'auto' && barRef.current) {
+      length = barRef.current.offsetWidth / max * state;
+    }
+    if (barWidth !== 'auto') length = barWidth / max * state;
 
     return { percent, length };
   }, [max, state, barWidth]);
@@ -78,10 +84,15 @@ const TuoBarProgress = ({
   },[displayState, onAnimationState, progressInfo.percent, state])
 
   return (
-    <div className={`tuo-bar-progress-container ${className && className}`}>
+    <div
+      ref={barRef}
+      className={`tuo-bar-progress-container ${className && className}`}
+      style={{
+        width: barWidth
+      }}
+    >
       <div className="tuo-bar-progress-dashes-background"
         style={{
-          width: barWidth,
           height: barHeight,
           borderRadius: barRadius,
           background: backgroundColor
