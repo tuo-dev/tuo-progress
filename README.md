@@ -1,4 +1,6 @@
-# tuo-progress (react)
+# tuo-progress
+
+progress with value (react)
 
 ## Screenshot
 
